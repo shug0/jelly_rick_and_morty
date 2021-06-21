@@ -50,4 +50,16 @@ body {
   margin: auto;
   max-width: 1200px;
 }
+
+.Button {
+  border: 0;
+  min-width: 80px;
+  padding: 0.5rem;
+  color: $color-white;
+  cursor: pointer;
+  background-color: $color-bg_secondary;
+  &:hover {
+    background-color: $color-bg_tertiary;
+  }
+}
 </style>

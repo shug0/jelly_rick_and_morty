@@ -3,7 +3,7 @@
     <font-awesome-icon class="SearchBar_Icon" icon="search" />
     <input
       class="SearchBar_Input"
-      placeholder="Type characters.."
+      placeholder="Search characters.."
       type="text"
     />
   </section>
@@ -13,13 +13,14 @@
 @import "@/theme/variable.scss";
 
 .SearchBar {
-  background-color: white;
+  background-color: $color-white;
   height: 40px;
   max-width: 300px;
   margin: auto;
   position: relative;
   overflow: hidden;
   border-radius: 6px;
+  margin-top: 2rem;
 
   &_Icon {
     position: absolute;

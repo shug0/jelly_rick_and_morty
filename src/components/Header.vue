@@ -16,7 +16,6 @@
   position: relative;
   text-align: center;
   padding: 2rem 0;
-  margin-bottom: 2rem;
 
   &::before {
     content: "";
@@ -24,10 +23,10 @@
     left: 0;
     right: 0;
     position: absolute;
-    height: 300px;
+    height: 450px;
     background-image: url("~@/assets/header.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     z-index: -2;
   }
 
@@ -38,8 +37,9 @@
     right: 0;
     position: absolute;
     z-index: -1;
-    height: 300px;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), $color-bg);
+    height: 100px;
+    opacity: 0.8;
+    background: linear-gradient($color-bg, rgba(0, 0, 0, 0));
   }
 
   &_Wrapper {
