@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/theme/variable.scss";
+@import "./theme/variable.scss";
 
 *,
 *:before,

@@ -6,7 +6,7 @@
 
     <section>
       <div class="Pagination">
-        <button class="Button" v-if="currentPage" @click="goPreviousPage">
+        <button class="Button" v-if="currentPage > 1" @click="goPreviousPage">
           Previous
         </button>
         <div class="Pagination_info">Page {{ currentPage }}</div>
@@ -14,16 +14,35 @@
       </div>
 
       <ul class="Characters_list" name="list" tag="p">
-        <article :key="character.id" v-for="character in characters">
+        <li :key="character.id" v-for="character in characters">
           <Character :data="character" />
-        </article>
+        </li>
       </ul>
     </section>
   </main>
 </template>
 
+<script>
+import { mapState, mapActions } from "vuex";
+import SearchBar from "@/components/SearchBar";
+import Character from "@/components/Character";
+
+export default {
+  name: "Characters",
+  components: {
+    SearchBar,
+    Character,
+  },
+  mounted() {
+    this.$store.dispatch("getCharacters");
+  },
+  computed: mapState(["characters", "currentPage"]),
+  methods: mapActions(["goNextPage", "goPreviousPage"]),
+};
+</script>
+
 <style lang="scss" scoped>
-@import "@/theme/variable.scss";
+@import "../theme/variable.scss";
 
 .Search {
   margin-bottom: 300px;
@@ -45,22 +64,3 @@
   justify-content: center;
 }
 </style>
-
-<script>
-import { mapState, mapActions } from "vuex";
-import SearchBar from "@/components/SearchBar";
-import Character from "@/components/Character";
-
-export default {
-  name: "Characters",
-  components: {
-    SearchBar,
-    Character,
-  },
-  mounted() {
-    this.$store.dispatch("getCharacters");
-  },
-  computed: mapState(["characters", "currentPage"]),
-  methods: mapActions(["goNextPage", "goPreviousPage"]),
-};
-</script>
