@@ -1,8 +1,8 @@
 <template>
   <section class="SearchBar">
-    <font-awesome-icon class="SearchBar_Icon" icon="search" />
+    <font-awesome-icon class="SearchBar_icon" icon="search" />
     <input
-      class="SearchBar_Input"
+      class="SearchBar_input"
       placeholder="Search characters.."
       type="text"
     />
@@ -22,14 +22,14 @@
   border-radius: 6px;
   margin-top: 2rem;
 
-  &_Icon {
+  &_icon {
     position: absolute;
     color: $color-text_grey;
     top: 12px;
     left: 13px;
   }
 
-  &_Input {
+  &_input {
     border: 0;
     padding: 10px;
     padding-left: 40px;

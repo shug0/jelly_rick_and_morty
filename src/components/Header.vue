@@ -1,6 +1,6 @@
 <template>
   <div class="Navigation">
-    <div class="PageWrapper Navigation_Wrapper">
+    <div class="PageWrapper Navigation_wrapper">
       <h1><router-link to="/">Rick & Morty Characters</router-link></h1>
       <nav>
         <router-link to="/about">About</router-link>
@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/theme/variable.scss";
 
 .Navigation {
@@ -42,7 +42,7 @@
     background: linear-gradient($color-bg, rgba(0, 0, 0, 0));
   }
 
-  &_Wrapper {
+  &_wrapper {
     display: flex;
     align-items: center;
     flex-wrap: wrap;

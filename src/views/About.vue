@@ -1,6 +1,35 @@
 <template>
-  <main class="PageWrapper">
-    <h1>Rick & Morty</h1>
-    <h2>Coucou</h2>
+  <main class="PageWrapper About">
+    <h1>About</h1>
+    <h2>Possible improvements</h2>
+    <ul>
+      <li>Store the visited page in url params</li>
+      <li>Stagered animation for Cards items,</li>
+      <li>Placeholder items for loading</li>
+    </ul>
   </main>
 </template>
+
+<style lang="scss" scoped>
+.About {
+  margin-top: 400px;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  ul li {
+    padding-bottom: 0.5rem;
+    list-style: disc inside;
+  }
+}
+</style>

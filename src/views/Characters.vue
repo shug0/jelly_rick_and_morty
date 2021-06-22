@@ -4,20 +4,20 @@
       <SearchBar />
     </section>
 
-    <section class="Characters">
-      <div class="Characters_Pagination">
+    <section>
+      <div class="Pagination">
         <button class="Button" v-if="currentPage" @click="goPreviousPage">
           Previous
         </button>
-        <div class="Characters_Pagination_Info">Page {{ currentPage }}</div>
+        <div class="Pagination_info">Page {{ currentPage }}</div>
         <button class="Button" @click="goNextPage">Next</button>
       </div>
 
-      <transition-group class="Characters_List" name="list" tag="p">
+      <ul class="Characters_list" name="list" tag="p">
         <article :key="character.id" v-for="character in characters">
           <Character :data="character" />
         </article>
-      </transition-group>
+      </ul>
     </section>
   </main>
 </template>
@@ -29,22 +29,20 @@
   margin-bottom: 300px;
 }
 
-.Characters {
-  &_Pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    &_Info {
-      margin: 0 2rem;
-    }
+.Pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  &_info {
+    margin: 0 2rem;
   }
+}
 
-  &_List {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.Characters_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 </style>
 

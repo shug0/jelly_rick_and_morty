@@ -16,7 +16,6 @@ export default {
 
   metaInfo: {
     title: "Rick & Morty Characters",
-    titleTemplate: "%s",
   },
 };
 </script>
@@ -36,11 +35,9 @@ body {
   color: $color-text;
   background-color: $color-bg;
   a {
-    color: $color-text_primary;
     text-decoration: none;
   }
 
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
