@@ -46,6 +46,7 @@ body {
   padding: 0 2rem;
   margin: auto;
   max-width: 1200px;
+  margin-bottom: 3rem;
 }
 
 .Button {

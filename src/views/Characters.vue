@@ -35,13 +35,13 @@
           <Character :data="character" />
         </li>
       </transition-group>
-      <transition name="fade" class="NoResult" v-else>
+      <div class="NoResult" v-else>
         <img
           src="@/assets/blue.png"
           alt="A funny face of blue alien smiling (Mr. Meeseeks)"
         />
         <div>There is nothing here.</div>
-      </transition>
+      </div>
     </section>
   </main>
 </template>
