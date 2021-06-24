@@ -1,7 +1,12 @@
 <template>
   <div class="Navigation">
     <div class="PageWrapper Navigation_wrapper">
-      <h1><router-link to="/">Rick & Morty Characters</router-link></h1>
+      <h1>
+        <router-link to="/">
+          <img height="32" src="@/assets/logo.png" alt="A blue alien smiling" />
+          Rick & Morty Characters
+        </router-link>
+      </h1>
       <nav>
         <router-link to="/about">About</router-link>
       </nav>
@@ -10,7 +15,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import "@/theme/variable.scss";
+@import "../theme/variable.scss";
 
 .Navigation {
   position: relative;
@@ -55,6 +60,11 @@
     text-transform: uppercase;
     margin-bottom: 1rem;
     a {
+      img {
+        margin-right: 0.5rem;
+      }
+      display: flex;
+      align-items: center;
       color: $color-text;
     }
   }
