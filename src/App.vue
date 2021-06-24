@@ -53,10 +53,52 @@ body {
   min-width: 80px;
   padding: 0.5rem;
   color: $color-white;
-  cursor: pointer;
   background-color: $color-bg_secondary;
-  &:hover {
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+  &:not(:disabled):hover {
     background-color: $color-bg_tertiary;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Loading {
+  position: absolute;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 300;
+  color: $color-bg_disabled;
+
+  .spinner {
+    animation: linear spin 0.5s infinite;
+    margin-right: 1rem;
   }
 }
 </style>

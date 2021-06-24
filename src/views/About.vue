@@ -1,12 +1,7 @@
 <template>
   <main class="PageWrapper About">
     <h1>About</h1>
-    <h2>Possible improvements</h2>
-    <ul>
-      <li>Store the visited page in url params</li>
-      <li>Stagered animation for Cards items,</li>
-      <li>Placeholder items for loading</li>
-    </ul>
+    <p>Nothing to see here.</p>
   </main>
 </template>
 

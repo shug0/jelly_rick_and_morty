@@ -8,10 +8,15 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     currentPage: 1,
+    filters: null,
     characters: [],
+    charactersInfos: null,
     soloCharacter: null,
   },
   mutations: {
+    SET_INFOS(state, payload) {
+      state.charactersInfos = payload;
+    },
     SET_CHARACTERS(state, payload) {
       state.characters = [...payload];
     },
@@ -29,6 +34,9 @@ export default new Vuex.Store({
         state.currentPage--;
       }
     },
+    SET_FILTERS(state, payload) {
+      state.filters = { ...state.filters, ...payload };
+    },
   },
   actions: {
     resetCharacter({ commit }) {
@@ -41,10 +49,22 @@ export default new Vuex.Store({
     },
     getCharacters({ commit, state }) {
       axios
-        .get(API_ROUTES_CHARACTERS, { params: { page: state.currentPage } })
+        .get(API_ROUTES_CHARACTERS, {
+          params: { page: state.currentPage, ...state.filters },
+        })
         .then(({ data }) => {
           commit("SET_CHARACTERS", data.results);
+          commit("SET_INFOS", data.info);
+        })
+        .catch(() => {
+          commit("SET_CHARACTERS", []);
         });
+    },
+    filterResult({ commit, dispatch }, { target }) {
+      const filterName = target.name;
+      const filterValue = target.type === "radio" ? target.id : target.value;
+      commit("SET_FILTERS", { [filterName]: filterValue });
+      dispatch("getCharacters");
     },
     goNextPage({ commit, dispatch }) {
       commit("INCREMENT_PAGE");
