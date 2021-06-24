@@ -26,6 +26,9 @@ export default new Vuex.Store({
     SET_SOLO_CHARACTER(state, newCharacter) {
       state.soloCharacter = newCharacter;
     },
+    SET_PAGE(state, newPage) {
+      state.currentPage = newPage;
+    },
     INCREMENT_PAGE(state) {
       state.currentPage++;
     },
@@ -63,6 +66,7 @@ export default new Vuex.Store({
     filterResult({ commit, dispatch }, { target }) {
       const filterName = target.name;
       const filterValue = target.type === "radio" ? target.id : target.value;
+      commit("SET_PAGE", 1);
       commit("SET_FILTERS", { [filterName]: filterValue });
       dispatch("getCharacters");
     },

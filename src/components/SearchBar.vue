@@ -12,13 +12,7 @@
     </div>
     <div class="Filters">
       <span class="Filters_radio">
-        <input
-          type="radio"
-          name="status"
-          id="alive"
-          @change="filterResult"
-          checked
-        />
+        <input type="radio" name="status" id="alive" @change="filterResult" />
         <label for="alive">
           <font-awesome-icon class="checked" icon="check-circle" />
           <font-awesome-icon class="waiting" icon="circle" />
